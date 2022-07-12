@@ -47,12 +47,12 @@
 .container {
     max-width: 1200px;
     padding: 2em;
-    min-height: 60vh;
+    min-height: 65vh;
 }
 
 /* Footer */
 footer {
-    height: 150px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
