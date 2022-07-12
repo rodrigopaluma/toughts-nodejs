@@ -14,9 +14,11 @@ const User = require('./models/User');
 
 // Import Routes
 const toughtsRouter = require('./routes/toughtsRouter');
+const authRouter = require('./routes/authRouter');
 
 // Controllers
 const ToughtController = require('./controllers/ToughtsController');
+const AuthController = require('./controllers/AuthController');
 
 // Template engine
 app.engine('handlebars', exphbs.engine());
@@ -62,6 +64,7 @@ app.use((req, res, next) => {
 
 // Rotas
 app.use('/toughts', toughtsRouter);
+app.use('/', authRouter);
 
 app.get('/', ToughtController.showToughts);
 
