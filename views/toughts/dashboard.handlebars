@@ -4,4 +4,13 @@
         <a href="/toughts/add" class="btn">Criar Pensamento</a>
     </div>
     <h3>Seus Pensamentos</h3>
+    <ul>
+        {{#each toughts}}
+            <li>
+                {{title}}
+                <a href="/toughts/edit" class="btn">Editar</a>
+                <a href="/toughts/delete" class="btn">Deletar</a>
+            </li>
+        {{/each}}
+    </ul>
 </div>

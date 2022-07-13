@@ -8,9 +8,19 @@ module.exports = class ToughtController {
     }
 
     static async dashboard(req, res) {
-        /* const user = await User.findByPk(req.session.userid);
-        const toughts = await Tought.findAll({ where: { userId: req.session.userid } }); */
-        res.render('toughts/dashboard');
+
+        const userId = req.session.userid;
+
+        const user = await User.findOne({ 
+            where: { id: userId },
+            include: Tought,
+            plain: true
+        });
+        if(!user) {
+            res.redirect('/login');
+        }
+        const toughts = user.Toughts.map((result) => result.dataValues);
+        res.render('toughts/dashboard', { toughts });
     }
 
     static async createTought(req, res) {
