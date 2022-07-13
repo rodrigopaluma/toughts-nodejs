@@ -12,4 +12,8 @@ module.exports = class ToughtController {
         const toughts = await Tought.findAll({ where: { userId: req.session.userid } }); */
         res.render('toughts/dashboard');
     }
+
+    static async createTought(req, res) {
+        res.render('toughts/create');
+    }
 }

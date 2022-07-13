@@ -5,6 +5,7 @@ const ToughtsController = require('../controllers/ToughtsController');
 // Helpers
 const checkAuth = require('../helpers/auth').checkAuth;
 
+router.get('/add', checkAuth, ToughtsController.createTought);
 router.get('/dashboard', checkAuth, ToughtsController.dashboard);
 router.get('/', ToughtsController.showToughts);
 
