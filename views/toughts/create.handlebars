@@ -1,1 +1,11 @@
-<h2>Novo Pensamento</h2>
+<div class="tought-form-container">
+    <a href="/toughts/dashboard" class="btn">Voltar</a>
+    <h1>Criar Pensamento</h1>
+    <form action="/toughts/add" method="POST">
+        <div class="form-control">
+            <label for="title">Pensamento:</label>
+            <input type="text" name="title" id="title" placeholder="Digite o seu pensamento..." required>
+        </div>
+        <input type="submit" value="Criar Pensamento">
+    </form>
+</div>
