@@ -45,7 +45,7 @@ module.exports = class AuthController {
             req.session.userid = createdUser.id;
             req.flash('message','Usuário cadastrado com sucesso!');
             req.session.save(() => {
-                res.redirect('/');
+                res.redirect('toughts/dashboard');
             });
         } catch (error) {
             console.log(error);
@@ -79,7 +79,7 @@ module.exports = class AuthController {
         req.session.userid = user.id;
         req.flash('message',`Seja bem-vindo(a) ${user.name}!`);
         req.session.save(() => {
-            res.redirect('/toughts/dashboard');
+            res.redirect('toughts/dashboard');
         });
     }
 }
